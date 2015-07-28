@@ -5,6 +5,7 @@ var ballvelx = ballvel;
 var ballvely = ballvel;
 var ballx = 100;
 var bally = 100;
+var score = 0;
 
 
 function setup() {
@@ -23,6 +24,7 @@ function draw() {
 	ellipse(ballx, bally, 10, 10);
 	text("Ball Y :  " + bally.toString() + "   Ball X : " + ballx.toString(), 100, 100);
 	text("Mouse position x : "  + mouseX.toString() + "  Mouse Y : " + mouseY.toString(), 100, 150);
+	text("SCORE:  " + score.toString(), 100, 200);
 
 		if(ballx <= windowWidth && ballx > 0) {
 			ballvelx = ballvelx;
@@ -36,6 +38,7 @@ function draw() {
 		}
 		else if( bally <= 541 && bally > 539 && ballx > mouseX && ballx < mouseX+50 ) {
 			ballvely = -ballvely;
+			score ++;
 		}
 		
 		if(bally > 580) {
